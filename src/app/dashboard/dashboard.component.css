@@ -1,0 +1,74 @@
+.dash-container
+{
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  padding:50px;
+  top:0;
+}
+
+button{
+  border: solid white 3px;
+  border-radius: 15px;
+  background: none;
+  padding:20px;
+  font-family: 'Poppins', sans-serif;
+  color:white;
+  cursor:pointer;
+  margin-right:20px;
+}
+button:hover{
+  background: linear-gradient(148deg, rgba(103,32,133,1) 0%, rgba(56,22,187,1) 94%);
+  animation: opac ease-in 0.8s;
+  border: solid #3816bb 3px;
+}
+svg{
+  vertical-align: middle;
+  display: inline;
+}
+
+
+.black{
+  z-index:1;
+  position: absolute;
+  top:0;
+  left:0;
+  background: #00000050;
+  width:100%;
+  height:100%;
+}
+.users
+{
+  width:30%;
+  height:100%;
+  background: black;
+  position: absolute;
+  left:0;
+  top:0;
+  z-index:50;
+  animation: comeHere ease-in 1s;
+}
+
+.users-list{
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  animation:opac ease-in 1s;
+  padding:20px;
+}
+@media(max-width: 800px)
+{
+  .users{
+    width:100%;
+    animation: comeHere800 ease-in 1s;
+  }
+}
+
+@keyframes comeHere
+{
+  0%{width:0} 100%{width:30%}
+}
+@keyframes comeHere800
+{
+  0%{width:0} 100%{width:100%}
+}

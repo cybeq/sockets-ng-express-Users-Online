@@ -1,0 +1,53 @@
+<div class="dash-container">
+
+  <button (click)="showUsers()">
+
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-messenger" viewBox="0 0 16 16">
+    <path d="M0 7.76C0 3.301 3.493 0 8 0s8 3.301 8 7.76-3.493 7.76-8 7.76c-.81 0-1.586-.107-2.316-.307a.639.639 0 0 0-.427.03l-1.588.702a.64.64 0 0 1-.898-.566l-.044-1.423a.639.639 0 0 0-.215-.456C.956 12.108 0 10.092 0 7.76zm5.546-1.459-2.35 3.728c-.225.358.214.761.551.506l2.525-1.916a.48.48 0 0 1 .578-.002l1.869 1.402a1.2 1.2 0 0 0 1.735-.32l2.35-3.728c.226-.358-.214-.761-.551-.506L9.728 7.381a.48.48 0 0 1-.578.002L7.281 5.98a1.2 1.2 0 0 0-1.735.32z"/>
+  </svg>
+    Użytkownicy
+
+  </button>
+
+
+  <button (click)="logout()">
+
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-left" viewBox="0 0 16 16">
+    <path fill-rule="evenodd" d="M6 12.5a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5h-8a.5.5 0 0 0-.5.5v2a.5.5 0 0 1-1 0v-2A1.5 1.5 0 0 1 6.5 2h8A1.5 1.5 0 0 1 16 3.5v9a1.5 1.5 0 0 1-1.5 1.5h-8A1.5 1.5 0 0 1 5 12.5v-2a.5.5 0 0 1 1 0v2z"/>
+    <path fill-rule="evenodd" d="M.146 8.354a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L1.707 7.5H10.5a.5.5 0 0 1 0 1H1.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3z"/>
+  </svg>
+    Wyloguj
+
+  </button>
+
+  <h1 style="font-size:3em">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h1>
+  <h3 style="font-family: 'Poppins', sans-serif">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur assumenda dicta dolores eaque ex expedita impedit ipsam iure magni, mollitia nihil nulla officia officiis omnis, possimus praesentium quibusdam similique sunt?</h3>
+
+
+</div>
+
+<div class="black" [style]="'display:'+usersDisplay" (click)="shutUsers()"></div>
+
+<div class="users" id="users" [style]="'display:'+usersDisplay">
+  <div (click)="shutUsers()" style="cursor:pointer; padding:20px; margin-top:15px; margin-right: 0; margin-left:auto; text-align: right">
+  <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-x-circle-fill" viewBox="0 0 16 16">
+    <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293 5.354 4.646z"/>
+  </svg> shutdown
+  </div>
+  <div class="users-list">
+        <div *ngFor="let all of users">
+          <label class="user-label">
+                <h3 style=" margin-bottom:0;">{{all.email}}</h3>
+                <p style="font-family: 'Poppins', sans-serif; margin-top:0;">
+                      <label style="color: #16bb8a" *ngIf="getOnlineStatus(all.id)==='online'">⬤</label>
+                      <label style="color: #bb1659" *ngIf="getOnlineStatus(all.id)==='offline'">⬤</label>
+                      {{getOnlineStatus(all.id)}}
+                </p>
+          </label>
+        </div>
+   Użytkownicy online : {{online.length}}
+<!--  <div *ngFor="let all of online">-->
+<!--    {{all.user}}-->
+<!--  </div>-->
+  </div>
+</div>

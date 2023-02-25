@@ -1,5 +1,4 @@
 
-# To uczymy się gita 
 
 # Nsock
 
